@@ -13,8 +13,8 @@ print(list_to_sort)
 print(list_to_sort[18])
 #Suppression de toutes les lignes avec au moins une cellule vide :
 for position in range(len(list_to_sort)):
-    if len(list_to_sort[position]) < 4:
-        list_to_sort.remove(position)
+    if "" in list_to_sort[position]:
+        list_to_sort.remove(list_to_sort[position])
 print(list_to_sort)
 
 
