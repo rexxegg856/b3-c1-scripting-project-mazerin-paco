@@ -11,10 +11,18 @@ with open("conso-annuelles_v1.csv") as data_file:
 #Affichage du fichier sous la forme d'une liste où chaque ligne du fichier csv est séparée par une virgule :
 print(list_to_sort)
 print(list_to_sort[18])
+# /!\ Attention, ici j'ai une liste de 2264 entrées, par contre, chacune de ces entrées est une donnée str et non ...
+#...une liste imbriquée comme je le voulais.
+#Il faut que je transfome chacune de ces entrées en une nouvelle liste avec ; comme séparateur !
+
+for position1 in range(len(list_to_sort)):
+    list_to_sort[position1] = list_to_sort[position1].split(";")
+
 #Suppression de toutes les lignes avec au moins une cellule vide :
-for position in range(len(list_to_sort)):
-    if "" in list_to_sort[position]:
-        list_to_sort.remove(list_to_sort[position])
+for position1 in range(len(list_to_sort)):
+    for position2 in range(len(list_to_sort[position1])):
+        if list_to_sort[position1[position2]] == '':
+            list_to_sort.pop([position1])
 print(list_to_sort)
 
 
