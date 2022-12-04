@@ -78,10 +78,22 @@ for position1 in range(start_of_range, len(list_to_sort)):     	#Pour le moment,
 
 for position1 in range(start_of_range, len(list_to_sort)):
     list_to_sort[position1][3] = round(list_to_sort[position1][1] + list_to_sort[position1][2],2)
-    
+
+
+#Trier par type et par consommation, de la plus haute à la plus basse :
+#Je sépare dans un premier temps mes titres du reste de la liste pour ensuite pouvoir effectuer mes tris.
+title_list = list_to_sort[0]
+del list_to_sort[0]
+
+sorted_list = sorted(list_to_sort,key=lambda x: (x[4],x[3]), reverse=True)
+
+#Le tri est terminé je rajoute mes titres à ma listre triée :
+sorted_list.insert(0,title_list)
+print(sorted_list)
+
 
 #Conversion en fichier csv : conso-clean.csv:
 
 with open("conso-clean.csv", "w",newline="") as f:
     writer = csv.writer(f)
-    writer.writerows(list_to_sort)
+    writer.writerows(sorted_list)
