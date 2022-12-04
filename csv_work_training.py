@@ -72,7 +72,7 @@ print(list_to_sort)
  
 #3ème étape, convertir ces données de type string en type float
 
-start_of_range = 1												#On ne compte pas la première ligne : c'est le titre de chaque colonne.
+#start_of_range = 1												#On ne compte pas la première ligne : c'est le titre de chaque colonne.
 
 for position1 in range(start_of_range, len(list_to_sort)):
     list_to_sort[position1][1] = float(list_to_sort[position1][1])
@@ -82,3 +82,19 @@ print(len(list_to_sort))
 print(list_to_sort)
 
 #4ème étape, nous pouvons enfin additionner ces deux colonnes.
+#Création de notre colonne : "Total des deux années"
+
+list_to_sort[0].insert(3,"Total des deux années")
+
+for position1 in range(start_of_range, len(list_to_sort)):     	#Pour le moment, chacune des lignes de cette colonne vaut 0, hormis celle du titre.
+    list_to_sort[position1].insert(3,0)
+
+#Addition des deux années et ajout du résultat dans la colonne "Total des deux années"
+
+for position1 in range(start_of_range, len(list_to_sort)):
+    list_to_sort[position1][3] = round(list_to_sort[position1][1] + list_to_sort[position1][2],2)
+    
+print(len(list_to_sort))        
+print(list_to_sort)
+
+
