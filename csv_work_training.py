@@ -32,18 +32,25 @@ while Not_out_of_range:
         for position2 in range(len(list_to_sort[position1])):
             if (list_to_sort[position1][position2] == '') and (position1 == len(list_to_sort)-1):
                del list_to_sort[position1]					
-               Not_out_of_range = False            				#Suppression + sortie de la boucle while
+               Not_out_of_range = False            				#Suppression + sortie de la boucle while.
             elif list_to_sort[position1][position2] == '':
                del list_to_sort[position1]						#Suppression de l'entrée ne comprenant pas 5 cellules pleines.
                start_of_1range = position1						#Pour éviter de repartir de 0 à la première boucle for.
                reset_entire_for_loops = True					#Il nous faut réinitialiser la 1ère boucle for : 1ère étape, sortir de la 2ème boucle for.
                break
             elif position1 == len(list_to_sort)-1:
-                Not_out_of_range = False						#Nous sortons de la boucle while et donc des 3 boucles
+                Not_out_of_range = False						#Nous sortons de la boucle while et donc des 3 boucles.
 
             
 print(len(list_to_sort))        
 print(list_to_sort)
 
 
+#Suppression des colonnes ID logement :
+
+for position1 in range(len(list_to_sort)):
+    del list_to_sort[position1][1]
+
+print(len(list_to_sort))        
+print(list_to_sort)
 
