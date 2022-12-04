@@ -98,3 +98,8 @@ print(len(list_to_sort))
 print(list_to_sort)
 
 
+#Conversion en fichier csv : conso-clean.csv:
+
+with open("conso-clean.csv", "w",newline="") as f:
+    writer = csv.writer(f)
+    writer.writerows(list_to_sort)
