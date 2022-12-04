@@ -27,4 +27,3 @@ for position1 in range(len(list_to_sort)):
            break
 print(list_to_sort)
 
-
