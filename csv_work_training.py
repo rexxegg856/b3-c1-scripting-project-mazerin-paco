@@ -18,14 +18,12 @@ print(list_to_sort[18])
 for position1 in range(len(list_to_sort)):
     list_to_sort[position1] = list_to_sort[position1].split(";")
 
-#Suppression de toutes les lignes avec au moins une cellule vide :
-    
-list_without_empty_cell = []    
+#Suppression de toutes les lignes avec au moins une cellule vide :   
     
 for position1 in range(len(list_to_sort)):
     for position2 in range(len(list_to_sort[position1])):
-        if list_to_sort[position1][position2] != '':
-           list_without_empty_cell += list_to_sort[position1]
+        if list_to_sort[position1][position2] == '':
+           del list_to_sort[position1]
            break
 print(list_to_sort)
 
